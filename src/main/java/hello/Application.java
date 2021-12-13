@@ -62,7 +62,7 @@ public class Application {
 
   @GetMapping("/")
   public String index() {
-    writeCommittedStream.send(arenaUpdate.arena);
+     return "Let the battle begin!";
   }
 
   @PostMapping("/**")
@@ -70,6 +70,7 @@ public class Application {
     System.out.println(arenaUpdate);
     String[] commands = new String[]{"F", "R", "L", "T"};
     int i = new Random().nextInt(4);
+    writeCommittedStream.send(arenaUpdate.arena);
     return "T";
   }
   
